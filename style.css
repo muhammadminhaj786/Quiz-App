@@ -49,9 +49,29 @@ h3{
 .quizbody{
     display: none;
 }
+.main-header{
+    border: 1px solid #5aa6eb;
+    justify-content: space-evenly;
+}
 .main-con p{
     color: white;
 }
 .main-footer{
     justify-content: space-between;
+}
+.btn3{
+    height: 50px ;
+    border: none;
+}
+.conter{
+    color: white;
+}
+
+h1{
+    color: white;
+}
+
+
+#para_name{
+    color: white;
 }
