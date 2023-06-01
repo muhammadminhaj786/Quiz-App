@@ -24,18 +24,18 @@ var quesArray = [
         },
         answer: "Object-Base"
     },
-    // {
-    //     num: 3,
-    //     question: "The 'function' and  'var' are known as:",
-    //     Option: {
-    //         a: "Keywords",
-    //         b: "Data types",
-    //         c: "Declaration statements",
-    //         d: "Prototypes",
+    {
+        num: 3,
+        question: "The 'function' and  'var' are known as:",
+        Option: {
+            a: "Keywords",
+            b: "Data types",
+            c: "Declaration statements",
+            d: "Prototypes",
 
-    //     },
-    //     answer: "Declaration statements"
-    // }
+        },
+        answer: "Declaration statements"
+    }
     // ,
     // {
     //     num: 4,
@@ -103,20 +103,29 @@ var quizBody = document.querySelector(".quizbody")
 var inpName = document.getElementById("inp_name")
 var inpEmail = document.getElementById("inp_email")
 var inpRoll = document.getElementById("inp_roll")
+var inpInst = document.getElementById("inp-inst")
 
+//get result para 
+var detailsBody = document.querySelector('.details')
+var resName = document.getElementById('res-name')
+var resEmail = document.getElementById('res-email')
+var resRoll = document.getElementById('res-roll')
+var resInst = document.getElementById('res-inst')
+
+//get next button
+var btn3 = document.querySelector('.btn3')
+
+//get result section
+var resultBody = document.querySelector('.result')
 
 //Get question
 var Ques = document.getElementById('ques')
 //Get options
 var Opt = document.getElementById('opt').children
 
-for (var i of Opt) {
-    i.setAttribute("onclick", "selectOpt()")
-}
-
-//creating a select option function
-function selectOpt(){
-    
+for (var li of Opt) {
+    li.setAttribute("onclick", "selectOpt(this)")
+    li.removeAttribute("class", "wrongAns")
 }
 
 //creating a function when user click submit button triger this func
@@ -126,6 +135,7 @@ function strtQuiz(){
     formWrapper.style.display="none"
     //display section 2
     formwrapper.style.display="block"
+    btn3.style.display='none'
 
     //add questin no 1 dynamic
     Ques.innerHTML=quesArray[0].question
@@ -137,12 +147,7 @@ function strtQuiz(){
 
 
 }
-//get paragraph
-var paraName = document.getElementById('para-name')
-var paraEmail = document.getElementById('para-email')
-var paraRoll = document.getElementById('para-roll')
 
-//creating counter
 var counter = 0;
 function Counter(){
     counter++
@@ -161,10 +166,34 @@ function Counter(){
 
         var num = document.querySelector('.numb');
         num.innerHTML=counter+1;
+    }else{
+        quizBody.style.display="none"
+        resultBody.style.display="block"
+
+        //working on result section
+        resName.innerHTML = inpName.value
+        resEmail.innerHTML = inpEmail.value
+        resRoll.innerHTML = inpRoll.value   
+        resInst.innerHTML = inpInst.value
     };
+    btn3.style.display='none'
+    for (var li of Opt) {
+        li.classList.remove('correctAns')
+        li.classList.remove('wrongAns')
+        li.classList.remove('disableli')
+    }
 
     
 }
+
+
+//get paragraph
+var paraName = document.getElementById('para-name')
+var paraEmail = document.getElementById('para-email')
+var paraRoll = document.getElementById('para-roll')
+
+//creating counter
+
 
 //creating a function when user click start button triger this.
 function quizportal(){
@@ -177,6 +206,34 @@ function quizportal(){
     paraEmail.innerHTML = inpEmail.value
     paraRoll.innerHTML = inpRoll.value
 
-
     
+    
+}
+
+
+var corrAns = 0
+var wrngAns = 0
+//creating a select option function
+function selectOpt(ele){
+    if (ele.innerHTML===quesArray[counter].answer){
+        ele.className = 'correctAns'
+        corrAns++
+
+    }else{
+        ele.className = 'wrongAns'
+        wrngAns++
+        
+        for (var li of Opt) {
+            if(li.innerHTML===quesArray[counter].answer){
+                li.classList.add('correctAns')
+                break
+            }
+        }
+    }
+
+    btn3.style.display="block"
+    for (var li of Opt) {
+        li.classList.add('disableli')
+    }
+
 }
