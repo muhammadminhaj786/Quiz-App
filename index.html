@@ -12,13 +12,13 @@
     <section class="formwrapper  w-50 mx-auto ">
         <div class="heading">
             <h3>Quiz App</h3>
-        </div>
+        </div>  
         <div class="form  w-80 ">
             
             <input type="text" class="form-control my-3 " id="inp_name" placeholder="Enter your Name">
             <input type="text" class="form-control my-3 " id="inp_email" placeholder="Enter your Email">
             <input type="text" class="form-control my-3 " id="inp_roll" placeholder="Enter your Roll No">
-            <input type="text" class="form-control my-3" placeholder="Enter your Institute Name">
+            <input type="text" class="form-control my-3"  id="inp-inst" placeholder="Enter your Institute Name">
         </div>
         <div class="footer w-100 ">
             <button class="w-100  sub-btn " onclick="strtQuiz()">
@@ -34,8 +34,8 @@
             <button class="btn2 w-50" onclick="quizportal()"> Start Quiz</button>
         </div>
     </section>
-    <section class="quizbody w-50 border mx-auto my-5"> 
-        <div class="main-con border">
+    <section class="quizbody w-50 mt-5 mx-auto  "> 
+        <div class="main-con ">
             <div class="main-header d-flex ">
                 <p class="name_para" id="para-name">Name</p>
                 <p class="email_para" id="para-email">Email@gmail.com</p>
@@ -43,16 +43,50 @@
                 <p class="timer">00:00</p>
             </div>
             <div class="main-body">
-                <p class="ques">                
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, cupiditate ducimus? Pariatur vitae at veniam praesentium natus veritatis, unde, enim, voluptatem temporibus possimus quia doloremque magnam! Optio quasi voluptatum nesciunt.
-                    Aliquid autem rem ad laudantium ullam, veritatis ratione, vitae in pariatur repellendus vero et voluptate aspernatur porro ipsam inventore necessitatibus nam esse odio architecto. Dolores debitis dicta quaerat? Consequuntur, et.
-                    Veritatis saepe voluptas rem atque, accusamus facere voluptates architecto aut doloribus est quis tempora nobis beatae reiciendis ullam. Impedit, rerum! Voluptatem quam illo quos laboriosam quod accusantium at facilis corrupti?
-                    Voluptate quasi, quos nobis ullam beatae tempora sunt tenetur omnis odio voluptatum suscipit dolorum? Ullam architecto impedit laboriosam quas doloribus, obcaecati praesentium eius reprehenderit illo atque sunt fugdiandae vero ex quibusdam delectus dolorem quas!
-                    Eos dolorum aliquid, harum autem possimus id a officiis facere, maxime consequatur asperiores quam, quis temporibus nisi expedita aliquam perferendis. Fugit nulla aliquid consequuntur quia voluptate velit tenetur blanditiis placeat!</p>
+                <h5 id="ques" class="border-bottom">                
+                    uas doloribus, obcaecati praesentium eius reprehenderit illo atq
+                    ta aliquam perferenuptate velit tenetur blanditiis placeat!
+                </h5>
+                <ul id="opt">
+                    <li class=""></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+
+                </ul>
             </div>
             <div class="main-footer d-flex border">
-                <div class="conter"> <span class="numb">0</span>/10</div>
-                <div class=""><button class="btn3 btn btn-success" onclick="my_count()">Next Ques</button></div>
+                <div class="conter"> <span class="numb">1</span>/10</div>
+                <div class=""><button class="btn3 btn btn-success" onclick="Counter()">Next Ques</button></div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="result border w-75 mx-auto">
+            <div class="picture d-flex">
+                <div class="img-con">
+                    <img class=" img2 " src="./images/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.webp"  alt="">
+                </div>
+                <div class="details border ">
+                    <p id="res-name">Name</p>  
+                    <p id="res-email">Email</p>
+                    <p id="res-roll">Roll No</p>
+                    <p id="res-inst"> Institute Name</p>
+                </div>
+            </div>
+            <div class="result-show border mt-2 d-flex">
+                <div class="result-values w-50">
+                    <p>
+                        Total Questions. <span class="ttl"></span>
+                    </p>
+                    <p>
+                        Right Answer. <span class="ra"></span>
+                    </p>
+                    <p>
+                        Wrong Answer. <span class="wa"></span>
+                    </p>
+                </div>
+                <div class="result-field w-40"></div>
             </div>
         </div>
     </section>
