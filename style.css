@@ -7,7 +7,7 @@ body{
 }
 .formwrapper{
    margin-top: 100px;
-   min-height: 70vh;
+   /* min-height: 70vh; */
    border: 1px solid #0e6d99;
 }
 .formwrapper input{
@@ -47,6 +47,7 @@ h3{
 }
 
 .quizbody{
+    border: 1px solid #0e6d99;
     display: none;
 }
 .main-header{
@@ -74,4 +75,59 @@ h1{
 
 #para_name{
     color: white;
+}
+
+/* set question and options style */
+#ques{
+    color: white;
+    font-size: 2.4vw;
+    font-weight: bold;
+}
+#opt{
+    color: white;
+    font-size: 2vw;
+    font-weight: bold;
+}
+#opt li{
+    list-style: none;
+    cursor: pointer;
+    
+}
+
+.correctAns{
+    border: 1px solid green;
+    color: green;
+}
+.wrongAns{
+    border: 1px solid red;
+    color: red;
+}
+.result{
+    display: none;
+    color: white;
+    height: 80vh;
+    width: 50%;
+    margin-top: 8%;
+}
+.disableli{
+    pointer-events: none;
+}
+
+.picture{
+    height: 50%;
+}
+.img-con{
+    height: 100%;
+    /* border: 1px solid red; */
+    width:50%;
+}
+.img2{
+    height: 100%;
+    width: 80%;
+}
+.details{
+    color: white;
+    width: 40%;
+    font-size: 1.8vw;
+    padding: 4%;
 }
