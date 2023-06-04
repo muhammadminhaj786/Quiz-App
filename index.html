@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="formwrapper  w-50 mx-auto ">
+ <section class="formwrapper  w-50 mx-auto ">
         <div class="heading">
             <h3>Quiz App</h3>
         </div>  
@@ -55,38 +55,44 @@
 
                 </ul>
             </div>
-            <div class="main-footer d-flex border">
-                <div class="conter"> <span class="numb">1</span>/10</div>
-                <div class=""><button class="btn3 btn btn-success" onclick="Counter()">Next Ques</button></div>
+            <div class="main-footer d-flex ">
+                <div class="conter">Question  <span class="numb"> 1 </span> of <span class="ttlq">0</span></div>
+                <div class=""><button class="btn3 " onclick="Counter()">Next Ques</button></div>
             </div>
         </div>
     </section>
     <section>
-        <div class="result border w-75 mx-auto">
+        <div class="result  w-75 mx-auto">
             <div class="picture d-flex">
                 <div class="img-con">
                     <img class=" img2 " src="./images/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.webp"  alt="">
                 </div>
-                <div class="details border ">
+                <div class="details  ">
                     <p id="res-name">Name</p>  
                     <p id="res-email">Email</p>
                     <p id="res-roll">Roll No</p>
                     <p id="res-inst"> Institute Name</p>
                 </div>
             </div>
-            <div class="result-show border mt-2 d-flex">
-                <div class="result-values w-50">
+            <div class="result-show mt-4 d-flex ">
+                <div class="result-values w-50 ">
                     <p>
-                        Total Questions. <span class="ttl"></span>
+                        Total Questions: <span class="ttl">0</span>
                     </p>
                     <p>
-                        Right Answer. <span class="ra"></span>
+                        Right Answer: <span class="ra"></span>
                     </p>
                     <p>
-                        Wrong Answer. <span class="wa"></span>
+                        Wrong Answer: <span class="wa"></span>
                     </p>
                 </div>
-                <div class="result-field w-40"></div>
+                <div class="result-field w-50 ">
+                    result: <span class="perc">0</span>%
+                </div>
+            </div>
+            <div class="resultctx w-100 mt-2 ">
+                <!-- <img src="./images/fail-stamp-png-vote-stamp-11562944657qtd80mpdd2.png" alt="" height="50px" width="60px"> -->
+                <p class="define">conguraltion you are passed</p>
             </div>
         </div>
     </section>
