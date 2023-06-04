@@ -1,4 +1,4 @@
-//Questions
+// //Questions
 var quesArray = [
     {
         num: 1,
@@ -36,56 +36,56 @@ var quesArray = [
         },
         answer: "Declaration statements"
     }
-    // ,
-    // {
-    //     num: 4,
-    //     question: "who is the present president of pakistan",
-    //     Option: {
-    //         a: "Arif Alvi",
-    //         b: "Imran Khan",
-    //         c: "Nawaz Sharif",
-    //         d: "Zardari",
+    ,
+    {
+        num: 4,
+        question: "who is the present president of pakistan",
+        Option: {
+            a: "Arif Alvi",
+            b: "Imran Khan",
+            c: "Nawaz Sharif",
+            d: "Zardari",
 
-    //     },
-    //     answer: "Arif Alvi"
-    // }
-    // ,
-    // {
-    //     num: 5,
-    //     question: "How many prayers in a day:",
-    //     Option: {
-    //         a: "6",
-    //         b: "5",
-    //         c: "3",
-    //         d: "none",
+        },
+        answer: "Arif Alvi"
+    }
+    ,
+    {
+        num: 5,
+        question: "How many prayers in a day:",
+        Option: {
+            a: "6",
+            b: "5",
+            c: "3",
+            d: "none",
 
-    //     },
-    //     answer: "5"
-    // },
-    // {
-    //     num: 6,
-    //     question: "How many total surah in quran",
-    //     Option: {
-    //         a: "113",
-    //         b: "114",
-    //         c: "112",
-    //         d: "111",
+        },
+        answer: "5"
+    },
+    {
+        num: 6,
+        question: "How many total surah in quran",
+        Option: {
+            a: "113",
+            b: "114",
+            c: "112",
+            d: "111",
 
-    //     },
-    //     answer: "114"
-    // },
-    // {
-    //     num: 7,
-    //     question: "The correct sequence of HTML tags for starting a webpage is",
-    //     Option: {
-    //         a: "Head, Title, HTML, body",
-    //         b: "HTML, Body, Title, Head",
-    //         c: "HTML, Head, Title, Body",
-    //         d: "HTML, Title , Head,  Body",
+        },
+        answer: "114"
+    },
+    {
+        num: 7,
+        question: "The correct sequence of HTML tags for starting a webpage is",
+        Option: {
+            a: "Head, Title, HTML, body",
+            b: "HTML, Body, Title, Head",
+            c: "HTML, Head, Title, Body",
+            d: "HTML, Title , Head,  Body",
 
-    //     },
-    //     answer: "HTML, Head, Title, Body"
-    // }
+        },
+        answer: "HTML, Head, Title, Body"
+    }
 ]
 
 
@@ -105,12 +105,21 @@ var inpEmail = document.getElementById("inp_email")
 var inpRoll = document.getElementById("inp_roll")
 var inpInst = document.getElementById("inp-inst")
 
+//get result portion para
+var ttlq = document.querySelector('.ttlq')
+var ttl = document.querySelector('.ttl')
+var ra = document.querySelector('.ra')
+var wa = document.querySelector('.wa')
+var percentage;
+var perc = document.querySelector('.perc')
+
 //get result para 
 var detailsBody = document.querySelector('.details')
 var resName = document.getElementById('res-name')
 var resEmail = document.getElementById('res-email')
 var resRoll = document.getElementById('res-roll')
 var resInst = document.getElementById('res-inst')
+var define = document.querySelector('.define')
 
 //get next button
 var btn3 = document.querySelector('.btn3')
@@ -145,7 +154,7 @@ function strtQuiz(){
     Opt[2].innerHTML=quesArray[0].Option.c
     Opt[3].innerHTML=quesArray[0].Option.d
 
-
+    ttlq.innerHTML=totalQus
 }
 
 var counter = 0;
@@ -166,6 +175,7 @@ function Counter(){
 
         var num = document.querySelector('.numb');
         num.innerHTML=counter+1;
+        
     }else{
         quizBody.style.display="none"
         resultBody.style.display="block"
@@ -175,6 +185,23 @@ function Counter(){
         resEmail.innerHTML = inpEmail.value
         resRoll.innerHTML = inpRoll.value   
         resInst.innerHTML = inpInst.value
+
+        //result portion
+        ttl.innerHTML = quesArray.length
+        wa.innerHTML=wrngAns
+        ra.innerHTML=corrAns
+        
+        percentage = (corrAns/quesArray.length)*100
+        percentage = Math.round(percentage)
+        perc.innerHTML = percentage
+
+        if(percentage<60){
+            define.innerHTML="Sorry You are failed!"
+            define.classList.add('fail-para')
+        }else{
+            define.innerHTML="Conguration you are passed!"
+            define.classList.add('pass-para')
+        }
     };
     btn3.style.display='none'
     for (var li of Opt) {
@@ -210,7 +237,7 @@ function quizportal(){
     
 }
 
-
+var totalQus = quesArray.length
 var corrAns = 0
 var wrngAns = 0
 //creating a select option function
@@ -237,3 +264,7 @@ function selectOpt(ele){
     }
 
 }
+
+
+
+
