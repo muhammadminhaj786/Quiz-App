@@ -1,57 +1,80 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+/* applying linear gradient */
 body{
-    background-image: url("./images/istockphoto-904951248-612x612.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 50vh;
-    
+    background: #4b6cb7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 .formwrapper{
-   margin-top: 100px;
-   /* min-height: 70vh; */
-   border: 3px solid #0e6d99;
-}
-.formwrapper input{
-    color: #0e6d99;
+    margin-top: 10%;
+    animation: RGB 4s ease infinite forwards;
+    box-shadow: rgb(24 40 72 / 74%) 1px 17px 65px 19px, rgb(24 40 72 / 58%) 0px 0px 44px 6px;
+    border-radius: 5px;
+    border: 5px solid #182848;
+    /* display: none; */
+
 }
 h3{
-    font-size: 40px;
-    text-align: center;
+    font-size: 3vw;
     color: white;
-    margin-top: 40px;
+    font-weight: bold;
+    text-align: center;
 }
 .sub-btn{
-    background-color: #04253e;
-    color: #0e6d99;
-    height: 50px;
-    font-size: 30px;
-    font-weight: bold;
-    border-radius: 5px ;
-}
-
-.start{
-    display: none;
-}
-.img2{
-    margin-left: 20%;
-}
-.btn2{
-    background-color: #5aa6eb;
-    border-radius: 5px;
-    height: 50px;
-    margin-left: 20%;
-    
+    background-color: #4b6cb7;
     color: white;
+    height: 50px;
+    border-radius: 10px;
     font-size: 2vw;
     border: none;
-    font-weight: bold;
 }
 
-.quizbody{
-    border: 5px solid #0e6d99;
+/* working on strat section */
+.start{
     display: none;
+    margin-top: 8%;
+    width: 50%;
+    animation: RGB 4s ease infinite forwards;
+    box-shadow: rgb(24 40 72 / 74%) 1px 17px 65px 19px, rgb(24 40 72 / 58%) 0px 0px 44px 6px;
+    border-radius: 5px;
+    border: 5px solid #182848;
 }
+.icn{
+    height: 25%;
+    /* border: 2px solid red; */
+    width: 50%;
+}
+.img2{
+    height: 50%;
+    width: 100%;
+}
+.btn2{
+    border: none;
+    background-color: #4b6cb7;
+    font-size: 2vw;
+    color: white;
+    border-radius: 10px;
+    height: 50px;
+}
+
+/* working on quzbody section*/
+.quizbody{
+    display: none;
+    margin-top: 10%;
+    width: 60%;
+    animation: RGB 4s ease infinite forwards;
+    box-shadow: rgb(24 40 72 / 74%) 1px 17px 65px 19px, rgb(24 40 72 / 58%) 0px 0px 44px 6px;
+    border-radius: 5px;
+    border: 5px solid #182848;
+}
+
 .main-header{
-    border: 2px solid #5aa6eb;
+    /* border: 2px solid #5aa6eb; */
     justify-content: space-evenly;
 }
 .main-con p{
@@ -64,12 +87,14 @@ h3{
 .btn3{
     height: 50px ;
     border: none;
-    background-color: #5aa6eb;
+    background-color: #4b6cb7;
     border-radius: 5px;
     color: white;
-    font-size: 1vw;
+    font-size: 1.6vw;
     border: none;
     font-weight: bold;
+    margin-right: 4%;
+    width: 200px;
 }
 .conter{
     color: white;
@@ -100,7 +125,9 @@ h1{
     cursor: pointer;
     
 }
-
+.disableli{
+    pointer-events: none;
+}
 .correctAns{
     border: 1px solid green;
     color: green;
@@ -109,58 +136,109 @@ h1{
     border: 1px solid red;
     color: red;
 }
+
+/* working on result section */
 .result{
     display: none;
-    color: white;
-    height: 80vh;
-    width: 50%;
-    margin-top: 8%;
-    border: 2px solid #0e6d99;
-}
-.disableli{
-    pointer-events: none;
 }
 
-.picture{
-    height: 50%;
+/* progress bar */
+.container{
+    margin-top: 5%;
+    display: flex;
+    width: 100%;
+    padding: 50px 0;
+    border-radius: 8px;
+    background: #4b6cb7;
+    row-gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    animation: RGB 4s ease infinite forwards;
+    box-shadow: rgb(24 40 72 / 74%) 1px 17px 65px 19px, rgb(24 40 72 / 58%) 0px 0px 44px 6px;
+    
+    border: 5px solid #182848;
 }
-.img-con{
-    height: 100%;
-    /* border: 1px solid red; */
-    width:50%;
+.circular-progress{
+    position: relative;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background: conic-gradient(#0e6d99 3.6deg, #182848 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: RGB 4s ease infinite forwards;
+    box-shadow: rgb(24 40 72 / 74%) 1px 17px 65px 19px, rgb(24 40 72 / 58%) 0px 0px 44px 6px;
+    
+    border: 5px solid #182848;
 }
-.img2{
-    height: 100%;
-    width: 80%;
+.circular-progress::before{
+    content: "";
+    position: absolute;
+    height: 210px;
+    width: 210px;
+    border-radius: 50%;
+    background-color: #fff;
 }
-.details{
-    color: white;
-    width: 40%;
-    font-size: 1.8vw;
-    padding: 4%;
-}
-.ttlq{
-    color: white;
-}
-
-.define{
-    color: white;
-    font-size: 4vh;
-    text-align: center;
-}
-.pass-para{
-    color: green;
-    font-size: 3vw;
+.progress-value{
+    position: relative;
+    font-size: 2.3vw;
     font-weight: bold;
-
+    color: #0e6d99;
 }
-.fail-para{
-    color: red;
-    font-size: 3vw;
+.text{
+    font-size: 3.5vw;
     font-weight: bold;
+    color: white;
 }
-.result-show{
-    font-size: 3.2vh;
-    margin-left: 5%;
-    color: #5aa6eb;
-}
+
+/* applying media query min width 400px for responsive */
+@media screen and (max-width: 480px) {
+    .start{
+        margin-top: 30%;
+        width: 75%;
+    }
+    .btn2{
+        font-size: 4vw;
+    }
+    .quizbody{
+        width: 75%;
+        margin-top: 30%;
+    }
+    .btn3{
+        height: 35px;
+        width: 80px;
+        font-size: 2vw;
+        border: none;
+        border-radius: 5px;
+    }
+    #opt{
+        font-size: 3.6vw;
+    }
+    #ques{
+        font-size: 4vw;
+    }
+    .container{
+        width: 140%;
+    }
+    .circular-progress{
+        width: 210px;
+    }
+    .progress-value{
+        font-size: 5vw;
+        font-weight: bold;
+    }
+    .circular-progress::before{
+        content: "";
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background-color: #fff;
+    }
+    .text{
+        font-size: 4.2vw;
+        font-weight: bold;
+    }
+  }
