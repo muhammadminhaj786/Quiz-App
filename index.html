@@ -9,17 +9,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="formwrapper w-50 mx-auto">
+      <section class="formwrapper w-50 mx-auto">
         <div class="heading mt-2 ">
             <h3>Quiz App</h3>
         </div>  
-        <div class="form ">
+        <form >
         
             <input type="text" class="form-control my-3 "  id="inp_name" placeholder="Enter your Name">
             <input type="text" class="form-control my-3 "  id="inp_email" placeholder="Enter your Email">
             <input type="text" class="form-control my-3 "  id="inp_roll" placeholder="Enter your Roll No">
             <input type="text" class="form-control my-3"   id="inp-inst" placeholder="Enter your Institute Name">
-        </div>
+        </form>
         <div class="footer  ">
             <button class="sub-btn w-100 " onclick="strtQuiz()">
                 Submit
@@ -31,7 +31,7 @@
             <img class=" my-3 img2" src="./images/unnamed.png" alt="" >
         </div>
         <div class="btn-sec   ">
-            <button class="btn2 w-100" onclick="quizportal()"> Start Quiz</button>
+            <button class="btn2 w-100" onclick="quizportal();" > Start Quiz</button>
         </div>
     </section>
     <section class="quizbody mx-auto "> 
@@ -40,7 +40,7 @@
                 <p class="name_para" id="para-name">Name</p>
                 <p class="email_para" id="para-email">Email@gmail.com</p>
                 <p class="roll_para" id="para-roll">89</p>
-                <p class="timer">00:00</p>
+                <p class="timer"> <span class="mint">00</span>: <span class="sec">00</span></p>
             </div>
             <div class="main-body">
                 <h5 id="ques" class="border-bottom">                
