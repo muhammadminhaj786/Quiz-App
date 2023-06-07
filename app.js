@@ -132,6 +132,10 @@ var Ques = document.getElementById('ques')
 //Get options
 var Opt = document.getElementById('opt').children
 
+//progress bar
+let circularProgress = document.querySelector(".circular-progress"),
+progressValue = document.querySelector(".progress-value");
+
 for (var li of Opt) {
     li.setAttribute("onclick", "selectOpt(this)")
     li.removeAttribute("class", "wrongAns")
@@ -181,27 +185,50 @@ function Counter(){
         resultBody.style.display="block"
 
         //working on result section
-        resName.innerHTML = inpName.value
-        resEmail.innerHTML = inpEmail.value
-        resRoll.innerHTML = inpRoll.value   
-        resInst.innerHTML = inpInst.value
+        // resName.innerHTML = inpName.value
+        // resEmail.innerHTML = inpEmail.value
+        // resRoll.innerHTML = inpRoll.value   
+        // resInst.innerHTML = inpInst.value
 
         //result portion
-        ttl.innerHTML = quesArray.length
-        wa.innerHTML=wrngAns
-        ra.innerHTML=corrAns
+        // ttl.innerHTML = quesArray.length
+        // wa.innerHTML=wrngAns
+        // ra.innerHTML=corrAns
         
         percentage = (corrAns/quesArray.length)*100
         percentage = Math.round(percentage)
-        perc.innerHTML = percentage
+        console.log(percentage)
+        // perc.innerHTML = percentage
 
-        if(percentage<60){
-            define.innerHTML="Sorry You are failed!"
-            define.classList.add('fail-para')
+        // if(percentage<60){
+        //     define.innerHTML="Sorry You are failed!"
+        //     define.classList.add('fail-para')
+        // }else{
+        //     define.innerHTML="Conguration you are passed!"
+        //     define.classList.add('pass-para')
+        // }
+
+        //progress bar
+        let progressStartValue = 0;
+        if(percentage <=0){
+            percentage = percentage +1
         }else{
-            define.innerHTML="Conguration you are passed!"
-            define.classList.add('pass-para')
+            
+        let progressEndValue = percentage,    
+        speed = 100;
+
+        let progress = setInterval(() => {
+        progressStartValue++;
+
+        progressValue.textContent = `${progressStartValue}%`
+        circularProgress.style.background = `conic-gradient(#182848 ${progressStartValue * 3.6}deg, #ededed 0deg)`
+
+        if(progressStartValue == progressEndValue){
+        clearInterval(progress);
+            }    
+        }, speed);
         }
+        
     };
     btn3.style.display='none'
     for (var li of Opt) {
